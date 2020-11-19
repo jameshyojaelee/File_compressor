@@ -1,0 +1,46 @@
+ASCII
+
+compress 
+./build/src/compress --ascii data/file_2.txt file_2_compressed.txt   
+gdb --args build/src/compress --ascii data/file_2.txt file_2_compressed.txt   
+
+uncompress
+gdb --args build/src/uncompress --ascii file_5_compressed.txt file_5_decompressed.txt
+./build/src/uncompress --ascii file_5_compressed.txt file_5_decompressed.txt
+
+
+Real
+compress 
+./build/src/compress data/file_2.txt file_2_compressed.txt   
+./build/src/compress data/file_5.txt file_5_compressed.txt   
+
+gdb --args build/src/compress data/file_2.txt file_2_compressed.txt   
+gdb --args build/src/compress data/file_5.txt file_5_compressed.txt   
+
+uncompress
+./build/src/uncompress file_2_compressed.txt file_2_decompressed.txt
+./build/src/uncompress file_5_compressed.txt file_5_decompressed.txt
+
+gdb --args build/src/uncompress file_2_compressed.txt file_2_decompressed.txt
+gdb --args build/src/uncompress file_5_compressed.txt file_5_decompressed.txt
+
+
+
+
+
+bit convert
+
+char to bit
+./build/src/bitconverter.cpp.executable -b 100 charFile.txt bitFile.txt
+gdb --args build/src/bitconverter.cpp.executable -b 100 charFile.txt bitFile.txt
+
+bit to char
+./build/src/bitconverter.cpp.executable -c 100 bitFile.txt charBack.txt
+gdb --args build/src/bitconverter.cpp.executable -c 100 bitFile.txt charBack.txt
+
+diff charFile.txt charBack.txt
+
+
+
+
+
